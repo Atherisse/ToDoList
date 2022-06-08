@@ -13,6 +13,10 @@ struct AddView: View {
     
     @State var textFieldText:String = "" //the text field text variable which is empty by default
     
+    //alert variables
+    @State var alertTitle:String = ""//when the title is wrong, this wont be empty anymore
+    @State var showAlert:Bool = false //this boolean decides whether or not to show alerts
+    
     var body: some View {
         ScrollView{
             VStack{
@@ -39,16 +43,31 @@ struct AddView: View {
             .padding(14)
         }
         .navigationTitle("Add an Item (no emoji)")
+        .alert(isPresented: $showAlert, content: {
+            getAlert()
+        })
     }
     
         //when the save button is pressed, this function is executed.
     func saveButtonPressed(){
-        //we are calling the addItem function from our viewModel
-        //and are passing a title to it
-        listViewModel.addItem(title: textFieldText)
-        presentationMode.wrappedValue.dismiss()//will dismiss current view and return to the previous view
+        
+        //will check if our text input is appropriate
+        if listViewModel.textIsAppropriate(textFieldText) {
+            
+            listViewModel.addItem(title: textFieldText)//we are calling the addItem function from our viewModel and are passing a title to it
+            presentationMode.wrappedValue.dismiss()//will dismiss current view and return to the previous view
+            
+        } else {
+            
+            alertTitle = "Text must be greater than 3 characters long. -_-'" //sets the error message the user will see
+            showAlert.toggle() // when the title is not appropriate, will toggle the show alert boolean and will trigger an alert
+            
+        }
     }
     
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
+    }
 }
 
 struct AddView_Previews: PreviewProvider {
