@@ -38,4 +38,12 @@ class ListViewModel: ObservableObject{
         let newItem = ItemModel(title:title, isCompleted: false)
         items.append(newItem)
     }
+    
+    func textIsAppropriate(_ text:String) -> Bool { //checks whether our title for our ToDoList Item is appropriate or not
+        if(text.count > 3){
+            return true
+        }
+        return false
+    }
+    
 }
