@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9909E329284F2D5900DD8BBE /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909E328284F2D5900DD8BBE /* ListViewModel.swift */; };
 		999B8AB52849D07A00614616 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA52849D07900614616 /* ToDoListApp.swift */; };
 		999B8AB62849D07A00614616 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA52849D07900614616 /* ToDoListApp.swift */; };
-		999B8AB72849D07A00614616 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA62849D07900614616 /* ContentView.swift */; };
-		999B8AB82849D07A00614616 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA62849D07900614616 /* ContentView.swift */; };
 		999B8AB92849D07A00614616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999B8AA72849D07A00614616 /* Assets.xcassets */; };
 		999B8ABA2849D07A00614616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999B8AA72849D07A00614616 /* Assets.xcassets */; };
+		999B8AC52849D8B000614616 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AC42849D8B000614616 /* ListView.swift */; };
+		999B8AC72849DAEF00614616 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AC62849DAEF00614616 /* ListRowView.swift */; };
+		999B8AC92849E0BC00614616 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AC82849E0BC00614616 /* AddView.swift */; };
+		99EB7A12284F19E8005BC5A5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EB7A11284F19E8005BC5A5 /* ItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9909E328284F2D5900DD8BBE /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		999B8AA52849D07900614616 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
-		999B8AA62849D07900614616 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		999B8AA72849D07A00614616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999B8AAC2849D07A00614616 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999B8AB22849D07A00614616 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999B8AB42849D07A00614616 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		999B8AC42849D8B000614616 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		999B8AC62849DAEF00614616 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		999B8AC82849E0BC00614616 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		99EB7A11284F19E8005BC5A5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,9 +49,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9909E327284F2D3A00DD8BBE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9909E328284F2D5900DD8BBE /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		999B8A9F2849D07900614616 = {
 			isa = PBXGroup;
 			children = (
+				9909E327284F2D3A00DD8BBE /* ViewModels */,
+				99EB7A10284F180F005BC5A5 /* Models */,
+				999B8AC32849D8A100614616 /* Views */,
 				999B8AA42849D07900614616 /* Shared */,
 				999B8AB32849D07A00614616 /* macOS */,
 				999B8AAD2849D07A00614616 /* Products */,
@@ -55,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				999B8AA52849D07900614616 /* ToDoListApp.swift */,
-				999B8AA62849D07900614616 /* ContentView.swift */,
 				999B8AA72849D07A00614616 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -76,6 +93,24 @@
 				999B8AB42849D07A00614616 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		999B8AC32849D8A100614616 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				999B8AC42849D8B000614616 /* ListView.swift */,
+				999B8AC62849DAEF00614616 /* ListRowView.swift */,
+				999B8AC82849E0BC00614616 /* AddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99EB7A10284F180F005BC5A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99EB7A11284F19E8005BC5A5 /* ItemModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999B8AB72849D07A00614616 /* ContentView.swift in Sources */,
+				99EB7A12284F19E8005BC5A5 /* ItemModel.swift in Sources */,
+				999B8AC92849E0BC00614616 /* AddView.swift in Sources */,
+				9909E329284F2D5900DD8BBE /* ListViewModel.swift in Sources */,
 				999B8AB52849D07A00614616 /* ToDoListApp.swift in Sources */,
+				999B8AC52849D8B000614616 /* ListView.swift in Sources */,
+				999B8AC72849DAEF00614616 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999B8AB82849D07A00614616 /* ContentView.swift in Sources */,
 				999B8AB62849D07A00614616 /* ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
