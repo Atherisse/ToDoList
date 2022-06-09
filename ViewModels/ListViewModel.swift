@@ -47,6 +47,12 @@ class ListViewModel: ObservableObject{
         items.append(newItem)
     }
     
+    func updateItem(item: ItemModel){//this function is used when updating an item in our list. it finds the matching id and executes updateCompletion() on the current item
+        if let index = items.firstIndex(where: {$0.id == item.id}) {
+            items[index] = item.updateCompletion()
+        }
+    }
+    
     func textIsAppropriate(_ text:String) -> Bool { //checks whether our title for our ToDoList Item is appropriate or not
         if(text.count > 3){
             return true
