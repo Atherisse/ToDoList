@@ -12,7 +12,12 @@ struct ListView: View {
     @EnvironmentObject var listViewModel:ListViewModel
     
     var body: some View {
+        
         List {
+            if listViewModel.items.isEmpty {
+                Text("Add something to your To-Do List!")
+            }
+            
             ForEach(listViewModel.items) { item in
                 ListRowView(item: item)
                     .onTapGesture {
