@@ -10,7 +10,12 @@
 import Foundation
 
 class ListViewModel: ObservableObject{
-    @Published var items:[ItemModel] = []
+    @Published var items:[ItemModel] = [] {
+        didSet  {
+            saveItems() //saves the list every time the array changes
+        }
+    }
+    
     let itemKey: String = "items_list"
 
     //when this class is instanced, the first thing it does is to call the getItems function
