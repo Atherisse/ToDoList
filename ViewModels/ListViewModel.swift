@@ -47,6 +47,12 @@ class ListViewModel: ObservableObject{
         items.append(newItem)
     }
     
+    func saveItems(){
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: itemKey)
+        }
+    }
+    
     func updateItem(item: ItemModel){//this function is used when updating an item in our list. it finds the matching id and executes updateCompletion() on the current item
         if let index = items.firstIndex(where: {$0.id == item.id}) {
             items[index] = item.updateCompletion()
