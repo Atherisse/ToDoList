@@ -8,15 +8,23 @@
 //viewmodels contain the logic
 
 import Foundation
+import SwiftUI
 
 class ListViewModel: ObservableObject{
+    
+    @StateObject var dailyViewModel:DailyViewModel = DailyViewModel()
+    
     @Published var items:[ItemModel] = [] {
         didSet  {
             saveItems() //saves the list every time the array changes
         }
     }
     
-    let itemKey: String = "items_list"
+    var itemKey: String {
+        let prefix: String = "item_list_"
+        let suffix: String = dailyViewModel.daySelected
+        return prefix + suffix
+    }
 
     //when this class is instanced, the first thing it does is to call the getItems function
     init(){

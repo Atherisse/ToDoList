@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9909E329284F2D5900DD8BBE /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909E328284F2D5900DD8BBE /* ListViewModel.swift */; };
+		997CD9B2285C840900A12973 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997CD9B1285C840900A12973 /* DailyView.swift */; };
+		997CD9B6285C878200A12973 /* DailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997CD9B5285C878200A12973 /* DailyViewModel.swift */; };
 		999B8AB52849D07A00614616 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA52849D07900614616 /* ToDoListApp.swift */; };
 		999B8AB62849D07A00614616 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8AA52849D07900614616 /* ToDoListApp.swift */; };
 		999B8AB92849D07A00614616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999B8AA72849D07A00614616 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		9909E328284F2D5900DD8BBE /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		997CD9B1285C840900A12973 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
+		997CD9B5285C878200A12973 /* DailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewModel.swift; sourceTree = "<group>"; };
 		999B8AA52849D07900614616 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		999B8AA72849D07A00614616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999B8AAC2849D07A00614616 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				9909E328284F2D5900DD8BBE /* ListViewModel.swift */,
+				997CD9B5285C878200A12973 /* DailyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 		999B8AC32849D8A100614616 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				997CD9B1285C840900A12973 /* DailyView.swift */,
 				999B8AC42849D8B000614616 /* ListView.swift */,
 				999B8AC62849DAEF00614616 /* ListRowView.swift */,
 				999B8AC82849E0BC00614616 /* AddView.swift */,
@@ -215,7 +221,9 @@
 				999B8AC92849E0BC00614616 /* AddView.swift in Sources */,
 				9909E329284F2D5900DD8BBE /* ListViewModel.swift in Sources */,
 				999B8AB52849D07A00614616 /* ToDoListApp.swift in Sources */,
+				997CD9B2285C840900A12973 /* DailyView.swift in Sources */,
 				999B8AC52849D8B000614616 /* ListView.swift in Sources */,
+				997CD9B6285C878200A12973 /* DailyViewModel.swift in Sources */,
 				999B8AC72849DAEF00614616 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

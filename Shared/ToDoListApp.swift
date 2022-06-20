@@ -15,7 +15,7 @@ struct ToDoListApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                ListView()
+                DailyView(dailyViewModel: DailyViewModel())
             }
             .environmentObject(listViewModel)
         }

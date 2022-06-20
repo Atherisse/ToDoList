@@ -10,26 +10,32 @@ import SwiftUI
 struct ListView: View {
     
     @EnvironmentObject var listViewModel:ListViewModel
+    @ObservedObject var dailyViewModel:DailyViewModel = DailyViewModel()
     
     var body: some View {
         
-        List {
-            if listViewModel.items.isEmpty {
-                Text("Add something to your To-Do List!")
-            }
-            
-            ForEach(listViewModel.items) { item in
-                ListRowView(item: item)
-                    .onTapGesture {
-                        withAnimation(.linear){
-                            listViewModel.updateItem(item: item)
+        VStack {
+            Text(dailyViewModel.daySelected)
+                .font(.title2)
+            List {
+                if listViewModel.items.isEmpty {
+                    Text("Add something to your To-Do List!")
+                }
+                
+                ForEach(listViewModel.items) { item in
+                    ListRowView(item: item)
+                        .onTapGesture {
+                            withAnimation(.linear){
+                                listViewModel.updateItem(item: item)
+                            }
                         }
-                    }
+                }
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
+            .listStyle(PlainListStyle())
         }
-        .listStyle(PlainListStyle())
+        
         .navigationTitle("Todo List (no emoji)")
         .navigationBarItems(
             leading: EditButton(),
